@@ -48,11 +48,11 @@
         NSURL *fileURL = [NSURL fileURLWithPath:filePath];
 
         NSDictionary *settings = @{
-                                   AVFormatIDKey : @(kAudioFormatAppleIMA4),
-                                   AVSampleRateKey : @44100.0f,
-                                   AVNumberOfChannelsKey : @1,
-                                   AVEncoderBitDepthHintKey : @16,
-                                   AVEncoderAudioQualityKey : @(AVAudioQualityMedium)
+                                   AVFormatIDKey : @(kAudioFormatAppleIMA4), //媒体格式
+                                   AVSampleRateKey : @44100.0f, //采样率
+                                   AVNumberOfChannelsKey : @1, //音道数量
+                                   AVEncoderBitDepthHintKey : @16, //位深
+                                   AVEncoderAudioQualityKey : @(AVAudioQualityMedium) //音频质量
                                    };
 
         NSError *error;
@@ -98,6 +98,7 @@
     NSString *docsDir = [self documentsDirectory];
     NSString *destPath = [docsDir stringByAppendingPathComponent:filename];
 
+    //
     NSURL *srcURL = self.recorder.url;
     NSURL *destURL = [NSURL fileURLWithPath:destPath];
 
